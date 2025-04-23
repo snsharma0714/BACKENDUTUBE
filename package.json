@@ -1,6 +1,7 @@
 {
   "name": "backendutube",
   "version": "1.0.0",
+  "type": "module",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +16,14 @@
     "url": "https://github.com/snsharma0714/BACKENDUTUBE/issues"
   },
   "homepage": "https://github.com/snsharma0714/BACKENDUTUBE#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "accessibility": "^3.0.9",
+    "chalk": "^5.4.1",
+    "express": "^5.1.0",
+    "one-liner-joke": "^1.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }

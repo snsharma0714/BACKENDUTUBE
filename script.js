@@ -84,13 +84,49 @@
 // });
 
 
-const http = require('http');
+// const http = require('http');
 
-const server = http.createServer(function(req, res) {
-    res.end("Hello World!");
+// const server = http.createServer(function(req, res) {
+//     res.end("Hello World!");
+// });
+
+// server.listen(3000);
+
+// --------------------lecture 4-------------------------
+
+// import express from 'express'
+
+// const app = express()
+
+// app.get('/', (req, res) => {
+//   res.send('Hello Worlddddd')
+// })
+
+// app.listen(3000)
+
+
+import express from 'express';
+const app = express();
+
+app.use(function(req, res, next) {
+    console.log("I am a middleware");
+    next();
 });
 
-server.listen(3000);
+app.get('/', function(req, res) {
+    res.send('Hello World!');
+})
+app.get('/about', function(req, res) {
+    res.send('Hello About!');
+});
 
+app.get('/profile', function(req, res, next) {
+    return next(new Error("I am an error"));
+});
 
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
+app.listen(3000);
