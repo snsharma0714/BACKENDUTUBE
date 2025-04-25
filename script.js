@@ -105,28 +105,34 @@
 // app.listen(3000)
 
 
-import express from 'express';
-const app = express();
+// import express from 'express';
+// const app = express();
 
-app.use(function(req, res, next) {
-    console.log("I am a middleware");
-    next();
-});
+// app.use(function(req, res, next) {
+//     console.log("I am a middleware");
+//     next();
+// });
 
-app.get('/', function(req, res) {
-    res.send('Hello World!');
-})
-app.get('/about', function(req, res) {
-    res.send('Hello About!');
-});
+// app.get('/', function(req, res) {
+//     res.send('Hello World!');
+// })
+// app.get('/about', function(req, res) {
+//     res.send('Hello About!');
+// });
 
-app.get('/profile', function(req, res, next) {
-    return next(new Error("I am an error"));
-});
+// app.get('/profile', function(req, res, next) {
+//     return next(new Error("I am an error"));
+// });
 
-app.use(function(err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
+// app.use(function(err, req, res, next) {
+//     console.error(err.stack);
+//     res.status(500).send('Something broke!');
+// });
 
-app.listen(3000);
+// app.listen(3000);
+
+//---------------------------------Lecture 5--------------------------------
+
+//hum log kuch bhi data frontend par browser pr rakh skte hai abd jab bhi aap kuch 
+// bhi request par karoge wo fe pr saved data automatically backend par chla jayega
+
